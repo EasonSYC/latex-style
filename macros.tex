@@ -1,0 +1,181 @@
+% Misc
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\inverse}{^{-1}}
+
+\newcommand{\LHS}{\text{LHS}}
+\newcommand{\RHS}{\text{RHS}}
+
+\newcommand{\degree}{^{\circ}}
+
+% Sets
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\newcommand{\PP}{\mathbb{P}}
+
+\renewcommand{\emptyset}{\varnothing}
+
+% Functions
+\DeclareMathOperator{\img}{im}
+
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\identity}{Id}
+\newcommand{\indicator}{\mathbf{1}}
+
+% Functions - Missing Trigonometric & Hyperbolic functions
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arcoth}{arcoth}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcsch}{arcsch}
+
+% Functions - UK Notation
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\arccosec}{arccosec}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\arcosech}{arcosech}
+
+% Functions - Exponential and Logarithmic Functions
+\DeclareMathOperator{\lb}{lb}
+
+% Number Theory
+\newcommand{\totient}{\varphi}
+\DeclareMathOperator{\lcm}{lcm}
+
+\DeclareMathOperator{\modulo}{mod}
+
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+
+% Group Theory
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Orb}{Orb}
+\newcommand{\actson}{\curvearrowright}
+\newcommand{\subgroup}{\leq}
+\newcommand{\normalsub}{\lhd}
+
+% Analysis
+\DeclareMathOperator{\LUB}{LUB}
+\DeclareMathOperator{\supremum}{supremum}
+\DeclareMathOperator{\GLB}{GLB}
+\DeclareMathOperator{\infimum}{infimum}
+
+% Analysis - Infinity
+\newcommand{\infinity}{\infty}
+\newcommand{\plusinfinity}{+\infty}
+\newcommand{\minusinfinity}{-\infty}
+
+% Analysis - Differentiation
+% https://tex.stackexchange.com/a/60546/
+\newcommand{\Diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\DiffFrac}[2]{\frac{\Diff #1}{\Diff #2}}
+\newcommand{\DiffOp}[1]{\frac{\Diff}{\Diff #1}}
+
+\newcommand{\DiffN}[1]{\Diff^{#1}}
+\newcommand{\DiffNFrac}[3]{\frac{\DiffN{#3} #1}{\Diff {#2}^{#3}}}
+\newcommand{\DiffNOp}[2]{\frac{\DiffN{#2}}{\Diff {#1}^{#2}}}
+
+\newcommand{\Partial}{\partial}
+\newcommand{\PartialFrac}[2]{\frac{\Partial #1}{\Partial #2}}
+\newcommand{\PartialOp}[1]{\frac{\Partial}{\Partial #1}}
+
+\newcommand{\PartialN}[1]{\Partial^{#1}}
+\newcommand{\PartialNFrac}[3]{\frac{\PartialN{#3} #1}{\Partial {#2}^{#3}}}
+\newcommand{\PartialNOp}[2]{\frac{\PartialN{#2}}{\Partial {#1}^{#2}}}
+
+% Probabililty
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Expt}{\mathbb{E}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+
+% Probability - Distribution
+\DeclareMathOperator{\Binomial}{B}
+\DeclareMathOperator{\Poisson}{Po}
+\DeclareMathOperator{\Normal}{N}
+\DeclareMathOperator{\Exponential}{Exp}
+\DeclareMathOperator{\Geometric}{Geo}
+\DeclareMathOperator{\Uniform}{U}
+
+% Complex Numbers
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\re}{Re}
+\newcommand{\conjugate}[1]{\overline{#1}}
+
+% Linear Algebra
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\nul}{null}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\spn}{span}
+
+% Linear Algebra - Matrices
+
+\newcommand{\vm}[1]{\mathbf{#1}}
+\newcommand{\identityM}{\vm{I}}
+\newcommand{\zeroM}{\vm{O}}
+\newcommand{\transpose}{^{\intercal}}
+\newcommand{\hermitian}{^{\dagger}}
+
+% Linear Algebra - Matrix Groups
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Or}{O}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\SU}{SU}
+
+\newcommand{\PGL}{\PP\mathrm{GL}}
+\newcommand{\PSL}{\PP\mathrm{SL}}
+
+% Linear Algebra - Basis Vectors
+
+% https://tex.stackexchange.com/a/28213
+% \DeclareMathSymbol{\ii}{\mathalpha}{letters}{"10}
+% \DeclareMathSymbol{\jj}{\mathalpha}{letters}{"11}
+
+% \newcommand{\ihat}{\vect{\hat{\ii}}}
+% \newcommand{\jhat}{\vect{\hat{\jj}}}
+
+\newcommand{\ihat}{\textbf{\^{ı}}}
+\newcommand{\jhat}{\textbf{\^{ȷ}}}
+\newcommand{\khat}{\vm{\hat{k}}}
+
+% Paired Delimiters
+\DeclarePairedDelimiter{\circParaN}{(}{)}
+\newcommand{\circPara}[1]{\circParaN*{#1}}
+
+\DeclarePairedDelimiter{\squareParaN}{[}{]}
+\newcommand{\squarePara}[1]{\squareParaN*{#1}}
+
+\DeclarePairedDelimiter{\curlyParaN}{\{}{\}}
+\newcommand{\curlyPara}[1]{\curlyParaN*{#1}}
+
+\DeclarePairedDelimiter{\ceilN}{\lceil}{\rceil}
+\newcommand{\ceil}[1]{\ceilN*{#1}}
+
+\DeclarePairedDelimiter{\floorN}{\lfloor}{\rfloor}
+\newcommand{\floor}[1]{\floorN*{#1}}
+
+\DeclarePairedDelimiter{\absN}{\lvert}{\rvert}
+\newcommand{\abs}[1]{\absN*{#1}}
+
+\DeclarePairedDelimiter{\angN}{\langle}{\rangle}
+\newcommand{\ang}[1]{\angN*{#1}}
+
+\newcommand{\set}[2]{\left\{#1 \,\middle|\, #2\right\}}
