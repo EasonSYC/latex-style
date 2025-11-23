@@ -1,0 +1,72 @@
+\ProvidesPackage{eason}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+\usetikzlibrary{calc}
+% \usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fontawesome5}
+\usepackage{textcomp}
+
+\usepackage{hyperref}
+\usepackage{currfile}
+
+% Theorem Definitions
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{example}{Example}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{claim}[definition]{Claim}
+\newtheorem{proposition}[definition]{Proposition}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% Functions for PGF
+\pgfkeys{/pgf/declare function={csc(\x) = cosec(\x);}}
+
+\pgfkeys{/pgf/declare function={acot(\x) = atan(1 / \x);}}
+\pgfkeys{/pgf/declare function={asec(\x) = acos(1 / \x);}}
+\pgfkeys{/pgf/declare function={acsc(\x) = asin(1 / \x);}}
+\pgfkeys{/pgf/declare function={acosec(\x) = acsc(\x);}}
+
+\pgfkeys{/pgf/declare function={coth(\x) = 1 / tanh(\x);}}
+\pgfkeys{/pgf/declare function={sech(\x) = 1 / cosh(\x);}}
+\pgfkeys{/pgf/declare function={csch(\x) = 1 / sinh(\x);}}
+
+\pgfkeys{/pgf/declare function={cosech(\x) = csch(\x);}}
+
+\pgfkeys{/pgf/declare function={asinh(\x) = {ln(\x + sqrt((\x)^2 + 1))};}}
+\pgfkeys{/pgf/declare function={acosh(\x) = {ln(\x + sqrt((\x)^2 - 1))};}}
+\pgfkeys{/pgf/declare function={atanh(\x) = {0.5 * ln((1 + \x) / (1 - \x))};}}
+\pgfkeys{/pgf/declare function={acoth(\x) = atanh(1 / \x);}}
+\pgfkeys{/pgf/declare function={asech(\x) = acosh(1 / \x);}}
+\pgfkeys{/pgf/declare function={acsch(\x) = asinh(1 / \x);}}
+
+\pgfkeys{/pgf/declare function={acosech(\x) = acsch(\x);}}
+
+% Text Symbols
+\newcommand{\GitHubHref}[2]{
+    \href{https://github.com/#1/#2}{\faGithub\space #1/#2}
+}
+
+% Macros
+\input{macros.tex}
+\endinput
