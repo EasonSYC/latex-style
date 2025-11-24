@@ -12,6 +12,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{thmtools}
 \usepackage{mathtools}
 
 \usepackage[dvipsnames]{xcolor}
@@ -21,21 +22,33 @@
 \usepackage{hyperref}
 \usepackage{currfile}
 
-% Theorem Definitions
+\declaretheorem[
+    style=definition,
+    parent=section,
+    thmbox=L]{definition}
 
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newtheorem*{example}{Example}
+\declaretheorem[
+    style=definition,
+    numbered=no]{notation}
 
-\theoremstyle{plain}
-\newtheorem{theorem}[definition]{Theorem}
-\newtheorem{corollary}[definition]{Corollary}
-\newtheorem{lemma}[definition]{Lemma}
-\newtheorem{claim}[definition]{Claim}
-\newtheorem{proposition}[definition]{Proposition}
+\declaretheorem[
+    style=definition,
+    parent=section,
+    thmbox=S]{example}
 
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
+\declaretheorem[
+    style=definition,
+    sibling=example,
+    thmbox=S]{examples}
+
+\declaretheorem[
+    style=plain,
+    sibling=definition,
+    thmbox=M]{theorem, lemma, claim, corollary, proposition}
+
+\declaretheorem[
+    style=remark,
+    numbered=no]{remark, remarks}
 
 % Functions for PGF
 \pgfkeys{/pgf/declare function={csc(\x) = cosec(\x);}}
@@ -66,5 +79,5 @@
 }
 
 % Macros
-\input{latex-style/macros.tex}
+\input{\currfiledir macros.tex}
 \endinput

@@ -3,7 +3,7 @@
 
 \usepackage{pdfpages}
 
-\usepackage[a4paper, margin=0.3in]{geometry}
+\usepackage[a4paper, margin=1in]{geometry}
 
 \title{Test Document}
 \author{Eason Shao}
@@ -84,7 +84,7 @@
     \infinity, \plusinfinity, \minusinfinity
 \]
 
-\subsubsection{Differetiation}
+\subsubsection{Differentiation}
 \[
     \Diff x, \DiffFrac{y}{x}, \DiffOp{x}
 \]
@@ -151,14 +151,27 @@
 
 \begin{theorem}[Very Important Theorem]
     This is a very important theorem.
-    \begin{proof}
-        Some proof.
-    \end{proof}
 \end{theorem}
+
+\begin{proof}
+    Some proof.
+\end{proof}
+
+\begin{examples}
+    Some examples of the theorem.
+\end{examples}
+
+\begin{notation}
+    The previous theorem allows us to abuse notation.
+\end{notation}
 
 \begin{corollary}[Obvious Corollary]
     A corollary.
 \end{corollary}
+
+\begin{example}[An example]
+    An example.
+\end{example}
 
 \begin{lemma}[Some Lemma]
     Some lemma.
@@ -168,12 +181,16 @@
     Some claim.
 \end{claim}
 
+\begin{remark}
+    This is a remark on the claim.
+\end{remark}
+
 \begin{proposition}[Some Proposition]
     A proposition.
 \end{proposition}
 
-\begin{remark}
-    Some remark on this proposition.
-\end{remark}
+\begin{remarks}
+    Some remarks on this proposition.
+\end{remarks}
 
 \end{document}
