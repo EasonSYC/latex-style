@@ -148,11 +148,11 @@
 \]
 
 \section{Theorems}
-\begin{definition}[Some Definition]
+\begin{definition}[Some Definition]\label{def}
     This is a \emph{definition}.
 \end{definition}
 
-\begin{theorem}[Very Important Theorem]
+\begin{theorem}[Very Important Theorem]\label{thm}
     This is a very important theorem.
 \end{theorem}
 
@@ -168,7 +168,7 @@
     The previous theorem allows us to abuse notation.
 \end{notation}
 
-\begin{corollary}[Obvious Corollary]
+\begin{corollary}[Obvious Corollary]\label{cor}
     A corollary.
 \end{corollary}
 
@@ -176,11 +176,11 @@
     An example.
 \end{example}
 
-\begin{lemma}[Some Lemma]
+\begin{lemma}[Some Lemma]\label{lem}
     Some lemma.
 \end{lemma}
 
-\begin{claim}[Some Claim]
+\begin{claim}[Some Claim]\label{cla}
     Some claim.
 \end{claim}
 
@@ -188,12 +188,14 @@
     This is a remark on the claim.
 \end{remark}
 
-\begin{proposition}[Some Proposition]
+\begin{proposition}[Some Proposition]\label{pro}
     A proposition.
 \end{proposition}
 
 \begin{remarks}
     Some remarks on this proposition.
 \end{remarks}
+
+Referencing works as well, like \autoref{def}, \autoref{thm}, \autoref{cor}, \autoref{lem}, \autoref{cla} and \autoref{pro}.
 
 \end{document}

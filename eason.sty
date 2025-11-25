@@ -7,6 +7,7 @@
 
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{aliascnt}
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -35,11 +36,23 @@
 \newtheorem[bodystyle=\normalfont\noindent,
             L]{definition}{Definition}[section]
 
-\newtheorem[M]{theorem}[definition]{Theorem}
-\newtheorem[M]{lemma}[definition]{Lemma}
-\newtheorem[M]{claim}[definition]{Claim}
-\newtheorem[M]{corollary}[definition]{Corollary}
-\newtheorem[M]{proposition}[definition]{Proposition}
+\newcommand{\newtheoremenv}[2]{
+    \newaliascnt{#1}{definition}
+    \newtheorem[M]{#1}[#1]{#2}
+    \aliascntresetthe{#1}}
+
+\newtheoremenv{theorem}{Theorem}
+\newtheoremenv{lemma}{Lemma}
+\newtheoremenv{claim}{Claim}
+\newtheoremenv{corollary}{Corollary}
+\newtheoremenv{proposition}{Proposition}
+
+\providecommand*{\definitionautorefname}{Definition}
+\providecommand*{\theoremautorefname}{Theorem}
+\providecommand*{\lemmaautorefname}{Lemma}
+\providecommand*{\claimautorefname}{Claim}
+\providecommand*{\corollaryautorefname}{Corollary}
+\providecommand*{\propositionautorefname}{Proposition}
 
 \newtheorem[bodystyle=\normalfont\noindent,
             headstyle=\bfseries\boldmath Example,
