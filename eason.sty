@@ -12,7 +12,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{thmtools}
 \usepackage{mathtools}
 
 \usepackage[dvipsnames]{xcolor}
@@ -22,35 +21,32 @@
 \usepackage{hyperref}
 \usepackage{currfile}
 
+\theoremstyle{definition}
+\newtheorem*{notation}{Notation}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{remarks}{Remarks}
+
+\usepackage{thmbox}
+
 \hfuzz 4.59995pt % thmbox
 
-\declaretheorem[
-    style=definition,
-    parent=section,
-    thmbox=L]{definition}
+\newtheorem[bodystyle=\normalfont\noindent,
+            L]{definition}{Definition}[section]
 
-\declaretheorem[
-    style=definition,
-    numbered=no]{notation}
+\newtheorem[M]{theorem}[definition]{Theorem}
+\newtheorem[M]{lemma}[definition]{Lemma}
+\newtheorem[M]{claim}[definition]{Claim}
+\newtheorem[M]{corollary}[definition]{Corollary}
+\newtheorem[M]{proposition}[definition]{Proposition}
 
-\declaretheorem[
-    style=definition,
-    parent=section,
-    thmbox=S]{example}
-
-\declaretheorem[
-    style=definition,
-    sibling=example,
-    thmbox=S]{examples}
-
-\declaretheorem[
-    style=plain,
-    sibling=definition,
-    thmbox=M]{theorem, lemma, claim, corollary, proposition}
-
-\declaretheorem[
-    style=remark,
-    numbered=no]{remark, remarks}
+\newtheorem[bodystyle=\normalfont\noindent,
+            headstyle=\bfseries\boldmath Example,
+            S]{example}{Example}
+\newtheorem[bodystyle=\normalfont\noindent,
+            headstyle=\bfseries\boldmath Examples,
+            S]{examples}{Examples}
 
 % Functions for PGF
 \pgfkeys{/pgf/declare function={csc(\x) = cosec(\x);}}
