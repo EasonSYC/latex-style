@@ -5,6 +5,8 @@
 
 \usepackage[a4paper, margin=1in]{geometry}
 
+\usepackage{lipsum}
+
 \title{Test Document}
 \author{Eason Shao}
 \date{\today}
@@ -150,58 +152,75 @@
 \section{Theorems}
 \begin{definition}[Some Definition]
     \label{def}%
-    This is a \emph{definition}.
+    This is a \emph{definition}. \lipsum[1]
 \end{definition}
 
 \begin{theorem}[Very Important Theorem]
     \label{thm}%
-    This is a very important theorem.
+    This is a very important theorem. \lipsum[2]
 \end{theorem}
 
 \begin{proof}
-    Some proof.
+    A proof. \lipsum[3]
+\end{proof}
+
+\begin{proof}[of \autoref{thm}]
+    A proof of \autoref{thm}. \lipsum[4]
 \end{proof}
 
 \begin{examples}
-    Some examples of the theorem.
+    Some examples of the theorem. \lipsum[5]
 \end{examples}
 
 \begin{notation}
-    The previous theorem allows us to abuse notation.
+    The previous theorem allows us to abuse notation. \lipsum[6]
 \end{notation}
 
 \begin{corollary}[Obvious Corollary]
     \label{cor}%
-    A corollary.
+    A corollary. \lipsum[7]
 \end{corollary}
 
 \begin{example}[An example]
-    An example.
+    An example. \lipsum[8]
 \end{example}
 
 \begin{lemma}[Some Lemma]
     \label{lem}%
-    Some lemma.
+    Some lemma. \lipsum[9]
 \end{lemma}
 
 \begin{claim}[Some Claim]
     \label{cla}%
-    Some claim.
+    Some claim. \lipsum[10]
 \end{claim}
 
 \begin{remark}
-    This is a remark on the claim.
+    This is a remark on the claim. \lipsum[11]
 \end{remark}
 
 \begin{proposition}[Some Proposition]
     \label{pro}%
-    A proposition.
+    A proposition. \lipsum[12]
 \end{proposition}
 
 \begin{remarks}
-    Some remarks on this proposition.
+    Some remarks on this proposition. \lipsum[13]
 \end{remarks}
 
-Referencing works as well, like \autoref{def}, \autoref{thm}, \autoref{cor}, \autoref{lem}, \autoref{cla} and \autoref{pro}.
+\begin{problem}[Some Problem]
+    \label{prm}%
+    A problem. \lipsum[14]
+\end{problem}
+
+\begin{solution}
+    A solution. \lipsum[15]
+\end{solution}
+
+\begin{solution}[of \autoref{prm}]
+    A solution of \autoref{prm}. \lipsum[16]
+\end{solution}
+
+Referencing works as well, like \autoref{def}, \autoref{thm}, \autoref{cor}, \autoref{lem}, \autoref{cla}, \autoref{pro}, and \autoref{prm}.
 
 \end{document}
