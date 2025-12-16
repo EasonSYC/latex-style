@@ -52,6 +52,12 @@
     \end{aligned}
 }
 
+\renewcommand\pmtseparator{\ }
+\newcommand{\perm}[1]{\pmt*{(#1)}}
+\newcommand{\permverb}[2]{
+    \renewcommand{\pmtprintorder}{#1}
+    \pmtv*{#2}}
+
 % Functions - Missing Trigonometric & Hyperbolic functions
 \DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\arcsec}{arcsec}
