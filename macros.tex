@@ -189,12 +189,14 @@
 
 % Linear Algebra - Basis Vectors
 
-% \newcommand{\ihat}{\vect{\hat{\ii}}}
-% \newcommand{\jhat}{\vect{\hat{\jj}}}
+\newcommand{\unitv}[1]{\vm{\hat{#1}}}
+
+% \newcommand{\ihat}{\unitv{\ii}}
+% \newcommand{\jhat}{\unitv{\jj}}
 
 \newcommand{\ihat}{\textbf{\^{ı}}}
 \newcommand{\jhat}{\textbf{\^{ȷ}}}
-\newcommand{\khat}{\vm{\hat{k}}}
+\newcommand{\khat}{\unitv{k}}
 
 % Paired Delimiters
 \DeclarePairedDelimiter{\paraN}{(}{)}
