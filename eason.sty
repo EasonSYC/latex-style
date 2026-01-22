@@ -80,11 +80,20 @@
     \newtheorem[M]{#1}[#1]{#2}
     \aliascntresetthe{#1}}
 
+\newcommand{\newexampleenv}[2]{
+    \newaliascnt{#1}{definition}
+    \newtheorem[bodystyle=\normalfont\noindent,
+    S]{#1}[#1]{#2}
+    \aliascntresetthe{#1}}
+
 \newtheoremenv{theorem}{Theorem}
 \newtheoremenv{lemma}{Lemma}
 \newtheoremenv{claim}{Claim}
 \newtheoremenv{corollary}{Corollary}
 \newtheoremenv{proposition}{Proposition}
+
+\newexampleenv{example}{Example}
+\newexampleenv{examples}{Examples}
 
 \newtheorem[bodystyle=\normalfont\noindent,
             S]{problem}{Problem}[section]
@@ -97,12 +106,15 @@
 \providecommand*{\propositionautorefname}{Proposition}
 \providecommand*{\problemautorefname}{Problem}
 
+\providecommand*{\exampleautorefname}{Example}
+\providecommand*{\examplesautorefname}{Examples}
+
 \newtheorem[bodystyle=\normalfont\noindent,
             headstyle=\bfseries\boldmath Example,
-            S]{example}{Example}
+            S]{example*}{Example}
 \newtheorem[bodystyle=\normalfont\noindent,
             headstyle=\bfseries\boldmath Examples,
-            S]{examples}{Examples}
+            S]{examples*}{Examples}
 
 % Functions for PGF
 \pgfkeys{/pgf/declare function={csc(\x) = cosec(\x);}}
