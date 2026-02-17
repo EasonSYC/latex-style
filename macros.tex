@@ -150,6 +150,22 @@
 % Analysis - Limits
 \newcommand{\notto}{\centernot\to}
 
+% Analysis - Big/Little O Notation
+
+\newcommand\littleO{
+    \underline{
+        \mathchoice
+            {{\scriptstyle\mathcal{O}}}
+            {{\scriptstyle\mathcal{O}}}
+            {{\scriptscriptstyle\mathcal{O}}}
+            {\scalebox{.6}{\(\scriptscriptstyle\mathcal{O}\)}}
+    }
+}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\bigTheta}{\Theta}
+\newcommand{\bigOmega}{\Omega}
+\newcommand{\littleOmega}{\omega}
+
 % Analysis - Infinity
 \newcommand{\plusinfty}{+\infty}
 \newcommand{\minusinfty}{-\infty}
