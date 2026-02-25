@@ -205,8 +205,31 @@
 \newcommand{\partition}{\mathcal{P}}
 \newcommand{\upperSum}{\mathcal{U}}
 \newcommand{\lowerSum}{\mathcal{L}}
-\newcommand{\upperInt}{I^{\ast}}
-\newcommand{\lowerInt}{I_{\ast}}
+\newcommand{\upperI}{I^{\ast}}
+\newcommand{\lowerI}{I_{\ast}}
+
+\newcommand{\upperInt}{\mathop{\mathpalette\tb@int{t}}\!\int}
+\newcommand{\lowerInt}{\mathop{\mathpalette\tb@int{b}}\!\int}
+
+\makeatletter
+\newcommand\tb@int[2]{%
+  \sbox\z@{$\m@th#1\int$}%
+  \if#2t%
+    \rlap{\hbox to\wd\z@{%
+      \hfil
+      \vrule width .35em height \dimexpr\ht\z@+1.4pt\relax depth -\dimexpr\ht\z@+1pt\relax
+      \kern.05em % a small correction on the top
+    }}
+  \else
+    \rlap{\hbox to\wd\z@{%
+      \vrule width .35em height -\dimexpr\dp\z@+1pt\relax depth \dimexpr\dp\z@+1.4pt\relax
+      \hfil
+    }}
+  \fi
+}
+\makeatother
+
+% https://tex.stackexchange.com/a/211132
 
 % Probabililty
 \newcommand{\eventSpace}{\mathcal{F}}
