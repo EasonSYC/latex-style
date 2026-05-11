@@ -27,7 +27,7 @@
 \usepackage{tikz-cd}
 
 \usepackage[dvipsnames]{xcolor}
-\usepackage{fontawesome5}
+\usepackage{fontawesome6}
 \usepackage{textcomp}
 
 \usepackage{hyperref}
@@ -148,9 +148,7 @@
 \pgfkeys{/pgf/declare function={acosech(\x) = acsch(\x);}}
 
 % Text Symbols
-\newcommand{\GitHubHref}[2]{
-    \href{https://github.com/#1/#2}{\faGithub\space #1/#2}
-}
+\newcommand{\GitHubHref}[2]{\href{https://github.com/#1/#2}{\faGithub\space #1/#2}}
 
 % Macros
 \input{macros.tex}
