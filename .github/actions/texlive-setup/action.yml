@@ -1,5 +1,5 @@
 name: Setup eason.sty
-
+description: "Setup TeX Live and Style Files in EasonSYC/latex-style"
 
 runs:
   using: "composite"
