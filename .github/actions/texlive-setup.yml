@@ -1,0 +1,17 @@
+name: Setup eason.sty
+
+
+runs:
+  using: "composite"
+  steps:
+
+  - name: Checkout latex-style
+    uses: actions/checkout@v6
+    with:
+      repository: EasonSYC/latex-style
+      path: latex-style
+  
+  - name: Install TeX Live
+    uses: zauguin/install-texlive@v4
+    with:
+      package_file: ${{ github.action_path }}/texlive.packages
