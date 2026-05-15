@@ -35,4 +35,13 @@ jobs:
           echo "\renewcommand{\COMMITSHA}{${{ env.commit_sha }}}" >> version.tex
       
       - name: Compile PDF
-        run: latexmk -pdflatex -interaction=nonstopmode -file-line-error test.tex
+        run: latexmk -pdflatex -interaction=nonstopmode -file-line-error main.tex
+
+      - name: Rename PDF
+        run: mv main.pdf ${{ github.event.repository.name }}-${{ env.commit_date }}-${{ env.commit_sha }}.pdf
+
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v7
+        with:
+          archive: false
+          path: ${{ github.event.repository.name }}-${{ env.commit_date }}-${{ env.commit_sha }}.pdf
