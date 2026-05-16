@@ -10,20 +10,6 @@ on:
 
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: Build PDF
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-        with:
-          submodules: recursive
-
-      - name: Setup TeX Live
-        uses: EasonSYC/latex-style-setup@main
-      
-      - name: Compile PDF
-        uses: EasonSYC/latex-compile-pdf@main
-        with:
-          job-name: ${{ github.event.repository.name }}
+  call-build:
+    name: Call Reusable Workflow
+    uses: EasonSYC/latex-style-workflow/.github/workflows/compile-pdf.yml@main
