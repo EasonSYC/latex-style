@@ -22,25 +22,8 @@ jobs:
 
       - name: Setup TeX Live
         uses: EasonSYC/latex-style-setup@main
-
-      - name: Declare Commit Information
-        run: |
-          echo "commit_sha=$(git rev-parse --short HEAD)" >> "$GITHUB_ENV"
-          echo "commit_date=$(git log -1 --format=%cd --date=format:%Y%m%d)" >> "$GITHUB_ENV"
-      
-      - name: Append to Version File
-        run: |
-          echo "" >> version.tex
-          echo "\renewcommand{\DATE}{${{ env.commit_date }}}" >> version.tex
-          echo "\renewcommand{\COMMITSHA}{${{ env.commit_sha }}}" >> version.tex
       
       - name: Compile PDF
         uses: EasonSYC/latex-compile-pdf@main
         with:
-          job-name: ${{ github.event.repository.name }}-${{ env.commit_date }}-${{ env.commit_sha }}
-
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v7
-        with:
-          archive: false
-          path: ${{ github.event.repository.name }}-${{ env.commit_date }}-${{ env.commit_sha }}.pdf
+          job-name: ${{ github.event.repository.name }}
