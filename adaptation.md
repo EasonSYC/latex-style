@@ -12,7 +12,7 @@
 2. Differentiation Symbols (No Issues Expected)
    - `\Diff` -> `\dd`
    - `\DiffFrac`, `\DiffOp` -> `\dv`
-   - `\PartialFrac`, `\PartialOp` -> `\pdv` 
+   - `\PartialFrac`, `\PartialOp` -> `\pdv`
 3. Differentiation Symbols (Manual Breaking Changes)
    - `\DiffN` -> `\dd`
    - `\DiffNFrac`, `\DiffNOp` -> `\dv`
