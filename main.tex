@@ -19,7 +19,7 @@
 \section{Symbols}
 \subsection{Misc}
 \[
-    \epsilon, n\inverse, \LHS, \RHS, \theta\degree, \rightbar{\PartialFrac{f}{x}}_{y, z}
+    \epsilon, n\inverse, \LHS, \RHS, \theta\degree, \rightbar{\pdv{f}{x}}_{y, z}
 \]
 \[
     \implies, \impliedby, \iff, \notimplies, \notimpliedby, \notiff
@@ -33,7 +33,7 @@
     \PP, \FF, \QQ\multiplicative, \CC\compactify
 \]
 \[
-    \powerset\para{X}, X\compl, \size\NN, \emptyset
+    \powerset\pqty{X}, X\compl, \size\NN, \emptyset
 \]
 \[
     \subset, \nsubset, \subseteq, \nsubseteq, \subsetneq
@@ -54,7 +54,7 @@
     \img, \ker
 \]
 \[
-    \sign, \identity, \indicator, \characteristic, \dd, \kronecker, \levicivita
+    \sign, \identity, \indicator, \characteristic, \diracdelta, \kronecker, \levicivita
 \]
 \[
     \functiondomain{\identity_{\RR}}{\RR}{\RR}
@@ -73,15 +73,6 @@
 \]
 
 \subsubsection{Trigonometric and Hyperbolic Functions}
-\[
-    \sin, \cos, \tan, \cot, \sec, \csc
-\]
-\[
-    \arcsin, \arccos, \arctan, \arccot, \arcsec, \arccsc
-\]
-\[
-    \sinh, \cosh, \tanh, \coth, \sech, \csch
-\]
 \[
     \arsinh, \arcosh, \artanh, \arcoth, \arsech, \arcsch
 \]
@@ -139,12 +130,6 @@
 
 \subsection{Vector Calculus}
 \[
-    \grad, \div, \curl, \laplacian
-\]
-\[
-    \vargrad, \vardiv, \varcurl, \varlaplacian
-\]
-\[
     \tens{T}
 \]
 
@@ -168,20 +153,6 @@
     \infty, \plusinfty, \minusinfty, \pminfty
 \]
 
-\subsubsection{Differentiation}
-\[
-    \Diff x, \DiffFrac{y}{x}, \DiffOp{x}
-\]
-\[
-    \DiffN{2} x, \DiffNFrac{y}{x}{2}, \DiffNOp{x}{2}
-\]
-\[
-    \Partial x, \PartialFrac{y}{x}, \PartialOp{x}
-\]
-\[
-    \PartialN{2} x, \PartialNFrac{y}{x}{2}, \PartialNOp{x}{2}
-\]
-
 \subsubsection{Differentiability Classes}
 \[
     \contClass{0}, \diffClass{1}, \smoothClass, \analyticClass
@@ -194,7 +165,7 @@
 
 \subsection{Probability}
 \[
-    \eventSpace, \indp, \para{\Conditional{A}{B}}, \Prob, \Expt, \Var, \Cov, \Corr
+    \eventSpace, \indp, \pqty{\Conditional{A}{B}}, \Prob, \Expt, \Var, \Cov, \Corr
 \]
 
 \subsubsection{Convergence}
@@ -213,12 +184,12 @@
 
 \subsection{Complex Numbers}
 \[
-    \arg, \im, \re, \conjugate{z}
+    \arg, \conjugate{z}
 \]
 
 \subsection{Linear Algebra}
 \[
-    \diag, \det, \tr, \adj, \nul, \rank, \spn
+    \diag, \det, \adj, \nul, \spn
 \]
 
 \subsubsection{Vector Spaces}
@@ -228,7 +199,7 @@
 
 \subsubsection{Matrices}
 \[
-    \vm{M}, \vmb{\lambda}, \identityM, \zeroM, \vm{M}\transpose, \vm{M}\hermitian, \vm{M}\perppl
+    \identityM, \zeroM, \vb{M}\transpose, \vb{M}\hermitian, \vb{M}\perppl
 \]
 
 \subsubsection{Matrix Groups}
@@ -243,7 +214,7 @@
 
 \subsubsection{Basis Vectors}
 \[
-    \unitv{e}, \unitvb{\theta}, \ihat, \jhat, \khat
+    \unitv{e}, \unitv*{\theta}, \ihat, \jhat, \khat
 \]
 
 \subsection{Theoretical Physics}
@@ -255,13 +226,10 @@
 
 \subsection{Paired Delimiters}
 \[
-    \para{\frac{a}{b}}, \brac{\frac{a}{b}}, \brce{\frac{a}{b}}
+    \bbrac{\frac{a}{b}}, \ceil{\frac{a}{b}}, \floor{\frac{a}{b}}, \angBrac{\frac{a}{b}}
 \]
 \[
-    \bbrac{\frac{a}{b}}, \ceil{\frac{a}{b}}, \floor{\frac{a}{b}}, \abs{\frac{a}{b}}, \norm{\frac{a}{b}}, \angBrac{\frac{a}{b}}
-\]
-\[
-    \set{x \in \RR}{x = \frac{a}{b}}, \bound{\Conditional{\frac{x}{y}}{A}}
+    \set{x \in \RR}{x = \frac{a}{b}}, \Conditional{\frac{x}{y}}{A}
 \]
 
 \section{Theorems}

@@ -50,7 +50,7 @@
 \DeclareMathOperator{\identity}{Id}
 \newcommand{\indicator}{\mathbf{1}}
 \newcommand{\characteristic}{\chi}
-\newcommand{\dd}{\delta}
+\newcommand{\diracdelta}{\delta}
 \newcommand{\kronecker}{\delta}
 \newcommand{\levicivita}{\epsilon}
 
@@ -76,13 +76,6 @@
     \pmtv*{#2}}
 
 % Functions - Missing Trigonometric & Hyperbolic functions
-\DeclareMathOperator{\arccot}{arccot}
-\DeclareMathOperator{\arcsec}{arcsec}
-\DeclareMathOperator{\arccsc}{arccsc}
-
-\DeclareMathOperator{\sech}{sech}
-\DeclareMathOperator{\csch}{csch}
-
 \DeclareMathOperator{\arsinh}{arsinh}
 \DeclareMathOperator{\arcosh}{arcosh}
 \DeclareMathOperator{\artanh}{artanh}
@@ -156,16 +149,6 @@
 \newcommand{\CP}{\CC\PP}
 \newcommand{\RP}{\RR\PP}
 
-% Vector Calculus
-\newcommand{\grad}{\vmb{\nabla}}
-\DeclareMathOperator{\vargrad}{grad}
-\renewcommand{\div}{\vmb{\nabla} \cdot}
-\DeclareMathOperator{\vardiv}{div}
-\newcommand{\curl}{\vmb{\nabla} \times}
-\DeclareMathOperator{\varcurl}{curl}
-\newcommand{\laplacian}{\nabla^2}
-\newcommand{\varlaplacian}{\Delta}
-
 % Tensors
 
 \newcommand{\tens}[1]{\mathsf{#1}}
@@ -201,23 +184,6 @@
 \newcommand{\plusinfty}{+\infty}
 \newcommand{\minusinfty}{-\infty}
 \newcommand{\pminfty}{\pm\infty}
-
-% Analysis - Differentiation
-\newcommand{\Diff}{\mathrm{d}}
-\newcommand{\DiffFrac}[2]{\frac{\Diff #1}{\Diff #2}}
-\newcommand{\DiffOp}[1]{\frac{\Diff}{\Diff #1}}
-
-\newcommand{\DiffN}[1]{\Diff^{#1}}
-\newcommand{\DiffNFrac}[3]{\frac{\DiffN{#3} #1}{\Diff {#2}^{#3}}}
-\newcommand{\DiffNOp}[2]{\frac{\DiffN{#2}}{\Diff {#1}^{#2}}}
-
-\newcommand{\Partial}{\partial}
-\newcommand{\PartialFrac}[2]{\frac{\Partial #1}{\Partial #2}}
-\newcommand{\PartialOp}[1]{\frac{\Partial}{\Partial #1}}
-
-\newcommand{\PartialN}[1]{\Partial^{#1}}
-\newcommand{\PartialNFrac}[3]{\frac{\PartialN{#3} #1}{\Partial {#2}^{#3}}}
-\newcommand{\PartialNOp}[2]{\frac{\PartialN{#2}}{\Partial {#1}^{#2}}}
 
 % Analysis - Differentiability Classes
 \newcommand{\diffClassSymb}{\mathcal{D}}
@@ -260,7 +226,7 @@
 % Probabililty
 \newcommand{\eventSpace}{\mathcal{F}}
 \newcommand{\indp}{\perp\!\!\!\!\perp}
-\newcommand{\Conditional}[2]{#1 \,\middle|\, #2}
+\newcommand{\Conditional}[2]{\bound{#1 \,\middle|\, #2}}
 \newcommand{\Prob}{\mathbb{P}}
 \newcommand{\Expt}{\mathbb{E}}
 \DeclareMathOperator{\Var}{Var}
@@ -289,16 +255,12 @@
 \newcommand{\sNormPdf}{\varphi}
 
 % Complex Numbers
-\DeclareMathOperator{\im}{Im}
-\DeclareMathOperator{\re}{Re}
 \newcommand{\conjugate}[1]{\overline{#1}}
 
 % Linear Algebra
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\adj}{adj}
-\DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\nul}{null}
-\DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\spn}{span}
 
 % Linear Algebra - Vector Spaces
@@ -306,10 +268,8 @@
 \newcommand{\supspace}{\geq}
 
 % Linear Algebra - Matrices
-\newcommand{\vm}[1]{\mathbf{#1}}
-\newcommand{\vmb}[1]{\boldsymbol{#1}}
-\newcommand{\identityM}{\vm{I}}
-\newcommand{\zeroM}{\vm{O}}
+\newcommand{\identityM}{\vb{I}}
+\newcommand{\zeroM}{\vb{O}}
 \newcommand{\transpose}{^{\intercal}}
 \newcommand{\hermitian}{^{\dagger}}
 \newcommand{\perppl}{^{\perp}}
@@ -334,8 +294,11 @@
 \newcommand{\negDefEq}{\preceq}
 
 % Linear Algebra - Basis Vectors
-\newcommand{\unitv}[1]{\vm{\hat{#1}}}
-\newcommand{\unitvb}[1]{\vmb{\hat{#1}}}
+\makeatletter
+\newcommand{\unitv@nostar}[1]{\vb{\hat{#1}}}
+\newcommand{\unitv@star}[1]{\vb*{\hat{#1}}}
+\newcommand{\unitv}{\@ifstar{\unitv@star}{\unitv@nostar}}
+\makeatother
 
 % \newcommand{\ihat}{\unitv{\ii}}
 % \newcommand{\jhat}{\unitv{\jj}}
@@ -355,14 +318,6 @@
 \newcommand{\dimLess}{\mathsf{1}}
 
 % Paired Delimiters
-\DeclarePairedDelimiter{\paraN}{(}{)}
-\newcommand{\para}[1]{\paraN*{#1}}
-
-\DeclarePairedDelimiter{\bracN}{[}{]}
-\newcommand{\brac}[1]{\bracN*{#1}}
-
-\DeclarePairedDelimiter{\brceN}{\{}{\}}
-\newcommand{\brce}[1]{\brceN*{#1}}
 
 \DeclarePairedDelimiter{\bbracN}{\llbracket}{\rrbracket}
 \newcommand{\bbrac}[1]{\bbracN*{#1}}
@@ -373,14 +328,8 @@
 \DeclarePairedDelimiter{\floorN}{\lfloor}{\rfloor}
 \newcommand{\floor}[1]{\floorN*{#1}}
 
-\DeclarePairedDelimiter{\normN}{\lVert}{\rVert}
-\newcommand{\norm}[1]{\normN*{#1}}
-
-\DeclarePairedDelimiter{\absN}{\lvert}{\rvert}
-\newcommand{\abs}[1]{\absN*{#1}}
-
 \DeclarePairedDelimiter{\angBracN}{\langle}{\rangle}
 \newcommand{\angBrac}[1]{\angBracN*{#1}}
 
-\newcommand{\set}[2]{\brce{#1 \,\middle|\, #2}}
+\newcommand{\set}[2]{\Bqty{\bound{#1 \,\middle|\, #2}}}
 \newcommand{\bound}[1]{\left.#1\right.}
