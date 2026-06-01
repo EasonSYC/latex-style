@@ -30,7 +30,7 @@
 - `\re` -> `\Re`; `\im` -> `\Im`
 - `\Diff`, `\DiffN` -> `\dd`
 - `\DiffFrac`, `\DiffOp`, `\DiffNFrac`, `\DiffNOp` -> `\dv`
-- `\PartialFrac`, `\PartialOp`, `\PartialNFrac`, `\PartialNOp` -> `\pdv` 
+- `\PartialFrac`, `\PartialOp`, `\PartialNFrac`, `\PartialNOp` -> `\pdv`
 
 ## Other Packages
 
