@@ -22,7 +22,7 @@
 ## Non-Breaking Changes
 
 1. No use of `\partial` or `\dd` (unless in integral or manipulating infinitesimals); use `\dv*` and `\pdv*` for flat derivatives
-2. Use `\qq` or `\qqTEXT` wherever possible
+2. Use `\qq` or `\qTEXT` wherever possible
 3. Use `\vdot`, `\cross` for vector dot/cross products
 4. Use `\flatfrac` for flat quotients
 5. Use `\PV` for Cauchy Principle Value

@@ -359,3 +359,7 @@
 \renewcommand{\norm}[1]{\norm@*{#1}}
 
 \makeatother
+
+\renewcommand{\flatfrac}[2]{\mathopen{}\mathclose\bgroup\left.\kern-\nulldelimiterspace#1\middle\slash#2\aftergroup\egroup\right.\kern-\nulldelimiterspace}
+
+% https://github.com/Willie169/physics-patch/issues/7

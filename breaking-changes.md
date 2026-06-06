@@ -3,6 +3,7 @@
 ## Overrides from Physics Package
 
 - `\abs`, `\norm`, `\pqty`, `\bqty`, `\Bqty`
+- `\flatfrac`
 
 ## Change in Source Package (No Change in Use)
 
