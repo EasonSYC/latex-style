@@ -1,8 +1,11 @@
 # Breaking Changes in `physics` Package
 
+## Overrides from Physics Package
+
+- `\abs`, `\norm`, `\pqty`, `\bqty`, `\Bqty`
+
 ## Change in Source Package (No Change in Use)
 
-- `\abs`, `\norm`
 - `\tr`, `\rank`
 - `\arccot`, `\arcsec`, `\arccsc`, `\sech`, `\csch`
 - `\grad`, `\div`, `\curl`, `\laplacian`
@@ -25,7 +28,6 @@
 
 ### Replaced with `physics` Package
 
-- `\para` -> `\pqty`; `\brac` -> `\bqty`; `\brce` -> `\Bqty`
 - `\vm` -> `\vb`; `\vmb` -> `\vb*`
 - `\re` -> `\Re`; `\im` -> `\Im`
 - `\Diff`, `\DiffN` -> `\dd`
