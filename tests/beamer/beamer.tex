@@ -1,0 +1,450 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+
+\usepackage[beamer]{eason}
+
+\useoutertheme{infolines}
+
+\usepackage{lipsum}
+
+\input{version}
+
+\AtBeginSection[]
+{
+    \frame{
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection]
+    }
+}
+
+\title{\LaTeX\ Style}
+\author[Y. Shao]{Eason Shao}
+\date{v.\DATE.\COMMITSHA}
+
+\begin{document}
+
+\frame{
+    \titlepage}
+
+\frame{
+    \frametitle{Table of Contents}
+    \tableofcontents}
+
+\section{Symbols}
+
+\begin{frame}
+    \frametitle{Misc}
+    \[
+        \epsilon, n\inverse, \LHS, \RHS, \theta\degree, \rightbar{\pdv{f}{x}}_{y, z}
+    \]
+    \[
+        \implies, \impliedby, \iff, \notimplies, \notimpliedby, \notiff
+    \]
+    \[
+        \bigland, \biglor
+    \]
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Sets}
+    \[
+        \PP, \FF, \QQ\multiplicative, \CC\compactify
+    \]
+    \[
+        \powerset\pqty{X}, X\compl, \size\NN, \emptyset
+    \]
+    \[
+        \subset, \nsubset, \subseteq, \nsubseteq, \subsetneq
+    \]
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Number Sets}
+    \[
+        \NN, \ZZ, \QQ, \RR, \CC
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Intervals}
+    \[
+        \ccintv{1}{2}, \cointv{1}{2}, \ocintv{1}{2}, \oointv{1}{2}
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Functions}
+    \[
+        \img, \ker
+    \]
+    \[
+        \sign, \identity, \indicator, \characteristic, \diracdelta, \kronecker, \levicivita
+    \]
+    \[
+        \functiondomain{\identity_{\RR}}{\RR}{\RR}
+    \]
+    \[
+        \functionmap{\identity_{\RR}}{x}{x}
+    \]
+    \[
+        \function{\identity_{\RR}}{\RR}{\RR}{x}{x}
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Functions -- Permutations}
+    \[
+    \perm{12} \perm{34}, \perm{{1}{2}\cdots{n}{n + 1}} \perm{{n + 1}n}
+    \]
+    \[
+        \permverb{1234}{1{2} 2{1} 3{4} 4{3}}, \permverb{12{\cdots}{n - 1}{n}{n + 1}}{1{2} 2{3} \cdots{\cdots} {n - 1}{n} {n}{n + 1} {n + 1}{1}} \permverb{{n}{n + 1}}{{n + 1}{n} {n}{n + 1}}
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Functions -- Trigonometric and Hyperbolic Functions}
+    \[
+        \sin, \cos, \tan, \cot, \sec, \csc
+    \]
+    \[
+        \arcsin, \arccos, \arctan, \arccot, \arcsec, \arccsc
+    \]
+    \[
+        \sinh, \cosh, \tanh, \coth, \sech, \csch
+    \]
+    \[
+        \arsinh, \arcosh, \artanh, \arcoth, \arsech, \arcsch
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Functions -- UK Notation}
+    \[
+        \cosec, \cosech, \arccosec, \arcosech
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Functions -- Exponential and Logarithmic Functions}
+    \[
+        \exp, \log, \ln, \lg, \lb
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Number Theory}
+    \[
+        \totient, \gcd, \gcf, \hcf, \lcm, \max, \min
+    \]
+    \[
+        7 \modulo 2, \equiv, \nequiv, 2 \divides 6, 2 \notdivides 7
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Algebra -- Group Theory}
+    \[
+    \Aut, \Inn, \Out, \End
+    \]
+    \[
+        \ord, \Isom, \Sym, \Syl, \Fix, \Orb, \Stab, \ccl
+    \]
+    \[
+        \trivialgp, \actson, \subgroup, \supgroup, \normalsub, \normalsup, \isomorphic, \notisomorphic, \mobius
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Algebra -- Ring Theory}
+    \[
+        \subring, \supring, \idealsub, \idealsup
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Algebra -- Module Theory}
+    \[
+        \submodule, \supmodule, \Ann, \Fit
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Algebra -- Polynomials}
+    \[
+        \content
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Geometry}
+    \[
+        \CP, \RP
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Vector Calculus}
+    \[
+        \grad, \div, \curl, \tens{T}
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Optimisation}
+    \[
+        \argmin, \argmax
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Analysis}
+    \[
+        \LUB, \supremum, \sup, \GLB, \infimum, \inf, \osc
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Analysis -- Limits}
+    \[
+        \limsup, \liminf, \lim, \to, \notto
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Analysis -- Big/Little O Notation}
+    \[
+        \littleO, \bigO, \bigTheta, \bigOmega, \littleOmega
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Analysis -- Infinity}
+    \[
+        \infty, \plusinfty, \minusinfty, \pminfty
+    \]    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Analysis -- Differentiability Classes}
+    \[
+        \contClass{0}, \diffClass{1}, \smoothClass, \analyticClass
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Analysis -- Integration}
+    \[
+        \partition, \upperSum, \lowerSum, \upperI, \lowerI, \upperInt, \lowerInt
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Probability}
+    \[
+        \eventSpace, \indp, \pqty{\Conditional{A}{B}}, \Prob, \Expt, \Var, \Cov, \Corr
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Probability -- Convergence}
+    \[
+        \toProb, \toAlmostSure, \toDist
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Probability -- Distribution}
+    \[
+        \Bernoulli, \Binomial, \NegativeBinomial, \Multinomial, \Poisson, \Normal, \Exponential, \Geometric, \Uniform
+    \]
+    \[
+        \sNormCdf, \sNormPdf
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Complex Numbers}
+    \[
+        \arg, \conjugate{z}, \Re, \Im
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linear Algebra}
+    \[
+        \diag, \det, \tr, \adj, \nul, \spn
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linear Algebra -- Vector Spaces}
+    \[
+        \subspace, \supspace
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linear Algebra -- Matrices}
+    \[
+        \identityM, \zeroM, \vb{M}\transpose, \vb{M}\hermitian, \vb{M}\perppl
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linear Algebra -- Matrix Groups}
+    \[
+        \matrixset, \GL, \SL, \Or, \SO, \U, \SU, \PGL, \PSL
+    \]
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Linear Algebra -- Positive/Negative Definiteness}
+    \[
+        \posDef, \posDefEq, \negDef, \negDefEq
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linear Algebra -- Basis Vectors}
+    \[
+        \unitv{e}, \unitv*{\theta}, \ihat, \jhat, \khat
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Theoretical Physics -- Dimensional Analysis}
+    \[
+        \dimT, \dimL, \dimM, \dimLess
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Paired Delimiters}
+    \[
+        \pqty{\frac{a}{b}}, \bqty{\frac{a}{b}}, \Bqty{\frac{a}{b}}, \abs{\frac{a}{b}}, \norm{\frac{a}{b}}, \norm[2]{\frac{a}{b}}
+    \]
+    \[
+        \bbrac{\frac{a}{b}}, \ceil{\frac{a}{b}}, \floor{\frac{a}{b}}, \angBrac{\frac{a}{b}}
+    \]
+    \[
+        \set{x \in \RR}{x = \frac{a}{b}}, \Conditional{\frac{x}{y}}{A}
+    \]
+\end{frame}
+
+\section{Overrides}
+
+\begin{frame}
+    \frametitle{Overrides}
+    \[
+        \flatfrac{a}{b}, \flatfrac{a}{\frac{a}{b}}
+    \]
+
+    \[
+        -\dv*{x}{y}, -\pdv*{x}{y}
+    \]
+\end{frame}
+
+
+\section{Theorems}
+
+\begin{frame}
+    \begin{definition}[Some Definition]
+        This is a \emph{definition}. \lipsum[1]
+    \end{definition}
+\end{frame}
+
+
+\begin{frame}
+    \begin{theorem}[Very Important Theorem]
+        This is a very important theorem. \lipsum[2]
+    \end{theorem}
+\end{frame}
+
+\begin{frame}
+    \begin{proof}
+        A proof. \lipsum[3]
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \begin{proof}[\proofname\ of the Theorem]
+        A proof of the theorem. \lipsum[4]
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \begin{examples}
+        Some examples of the theorem. \lipsum[5]
+    \end{examples}
+\end{frame}
+
+\begin{frame}
+    \begin{notation}
+        The previous theorem allows us to abuse notation. \lipsum[6]
+    \end{notation}
+\end{frame}
+
+\begin{frame}
+    \begin{corollary}[Obvious Corollary]
+        A corollary. \lipsum[7]
+    \end{corollary}
+\end{frame}
+
+\begin{frame}
+    \begin{example}[An example]
+        An example. \lipsum[8]
+    \end{example}
+\end{frame}
+
+\begin{frame}
+    \begin{lemma}[Some Lemma]
+        Some lemma. \lipsum[9]
+    \end{lemma}
+\end{frame}
+
+\begin{frame}
+    \begin{claim}[Some Claim]
+        Some claim. \lipsum[10]
+    \end{claim}
+\end{frame}
+
+\begin{frame}
+    \begin{remark}
+        This is a remark on the claim. \lipsum[11]
+    \end{remark}
+\end{frame}
+
+\begin{frame}
+    \begin{proposition}[Some Proposition]
+        A proposition. \lipsum[12]
+    \end{proposition}
+\end{frame}
+
+\begin{frame}
+    \begin{remarks}
+        Some remarks on this proposition. \lipsum[13]
+    \end{remarks}
+\end{frame}
+
+\begin{frame}
+    \begin{problem}[Some Problem]
+        A problem. \lipsum[14]
+    \end{problem}
+\end{frame}
+
+\begin{frame}
+    \begin{solution}
+        A solution. \lipsum[15]
+    \end{solution}
+\end{frame}
+
+\begin{frame}
+    \begin{solution}[\solutionname\ of the Problem]
+        A solution of the problem. \lipsum[16]
+    \end{solution}
+\end{frame}
+
+\end{document}

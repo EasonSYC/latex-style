@@ -9,7 +9,7 @@
 
 \input{version}
 
-\title{\LaTeX Style}
+\title{\LaTeX\ Style}
 \author{Eason Shao}
 \date{v.\DATE.\COMMITSHA}
 
@@ -65,14 +65,25 @@
 \[
     \function{\identity_{\RR}}{\RR}{\RR}{x}{x}
 \]
+
+\subsubsection{Permutations}
 \[
     \perm{12} \perm{34}, \perm{{1}{2}\cdots{n}{n + 1}} \perm{{n + 1}n}
 \]
 \[
-    \permverb{1234}{1{2} 2{1} 3{4} 4{3}}, \permverb{12{\cdots}{n - 1}{n}{n + 1}}{1{2} 2{3} \cdots{\cdots} {n - 1}{n} {n}{n + 1} {n + 1}{1}} \permverb{{n}{n + 1}}{{n + 1}{n} {n}{n + 1}},
+    \permverb{1234}{1{2} 2{1} 3{4} 4{3}}, \permverb{12{\cdots}{n - 1}{n}{n + 1}}{1{2} 2{3} \cdots{\cdots} {n - 1}{n} {n}{n + 1} {n + 1}{1}} \permverb{{n}{n + 1}}{{n + 1}{n} {n}{n + 1}}
 \]
 
 \subsubsection{Trigonometric and Hyperbolic Functions}
+\[
+    \sin, \cos, \tan, \cot, \sec, \csc
+\]
+\[
+    \arcsin, \arccos, \arctan, \arccot, \arcsec, \arccsc
+\]
+\[
+    \sinh, \cosh, \tanh, \coth, \sech, \csch
+\]
 \[
     \arsinh, \arcosh, \artanh, \arcoth, \arsech, \arcsch
 \]
@@ -130,7 +141,7 @@
 
 \subsection{Vector Calculus}
 \[
-    \tens{T}
+    \grad, \div, \curl, \tens{T}
 \]
 
 \subsection{Optimisation}
@@ -189,12 +200,12 @@
 
 \subsection{Complex Numbers}
 \[
-    \arg, \conjugate{z}
+    \arg, \conjugate{z}, \Re, \Im
 \]
 
 \subsection{Linear Algebra}
 \[
-    \diag, \det, \adj, \nul, \spn
+    \diag, \det, \tr, \adj, \nul, \spn
 \]
 
 \subsubsection{Vector Spaces}
@@ -240,7 +251,7 @@
     \set{x \in \RR}{x = \frac{a}{b}}, \Conditional{\frac{x}{y}}{A}
 \]
 
-\subsection{Override}
+\section{Override}
 \[
     \flatfrac{a}{b}, \flatfrac{a}{\frac{a}{b}}
 \]
@@ -264,7 +275,7 @@
     A proof. \lipsum[3]
 \end{proof}
 
-\begin{proof}[of \autoref{thm}]
+\begin{proof}[\proofname\ of \autoref{thm}]
     A proof of \autoref{thm}. \lipsum[4]
 \end{proof}
 
@@ -317,7 +328,7 @@
     A solution. \lipsum[15]
 \end{solution}
 
-\begin{solution}[of \autoref{prm}]
+\begin{solution}[\solutionname\ of \autoref{prm}]
     A solution of \autoref{prm}. \lipsum[16]
 \end{solution}
 

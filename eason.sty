@@ -1,47 +1,63 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{eason}[Eason]
+
+\newif\if@useams
+\newif\if@usebeamer
+\@useamsfalse
+\@usebeamerfalse
+\DeclareOption{thmbox}{\@useamsfalse}
+\DeclareOption{ams}{\@useamstrue}
+\DeclareOption{beamer}{\@usebeamertrue}
+\ProcessOptions\relax
+
 % Packages
-\usepackage{graphicx}
-\usepackage{pgfplots}
+\RequirePackage{graphicx}
+\RequirePackage{pgfplots}
 \pgfplotsset{compat=1.8}
 \usetikzlibrary{calc}
-% \usepackage[utf8]{inputenc}
+% \RequirePackage[utf8]{inputenc}
 
-\usepackage{fancyhdr}
-\usepackage{lastpage}
-\usepackage{aliascnt}
-\usepackage{pdflscape}
-\usepackage{enumitem}
-\usepackage{wrapfig}
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\RequirePackage{aliascnt}
+\RequirePackage{pdflscape}
+\RequirePackage{enumitem}
+\RequirePackage{wrapfig}
 
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{esint}
-\usepackage{mathtools}
-\usepackage{centernot}
-\usepackage{stmaryrd}
-\usepackage{interval}
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{esint}
+\RequirePackage{mathtools}
+\RequirePackage{centernot}
+\RequirePackage{stmaryrd}
+\RequirePackage{interval}
 \intervalconfig{soft open fences}
-\usepackage{permute}
-\usepackage{makecell}
+\RequirePackage{permute}
+\RequirePackage{makecell}
 
-\usepackage[notrig]{physics}
+\RequirePackage[notrig]{physics}
 
-\usepackage{tikz-cd}
-\usepackage{tikz-3dplot}
+\RequirePackage{tikz-cd}
+\RequirePackage{tikz-3dplot}
 
-\usepackage{siunitx}
+\RequirePackage{siunitx}
 
-\usepackage[section]{algorithm}
-\usepackage[noEnd=false,spaceRequire=false,rightComments=false]{algpseudocodex}
-\usepackage[section]{minted}
+\RequirePackage[section]{algorithm}
+\RequirePackage[noEnd=false,spaceRequire=false,rightComments=false]{algpseudocodex}
+\RequirePackage[section]{minted}
 
-\usepackage[dvipsnames]{xcolor}
-\usepackage{fontawesome6}
-\usepackage{textcomp}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{fontawesome6}
+\RequirePackage{textcomp}
 
-\usepackage{hyperref}
-\usepackage{currfile}
+\RequirePackage{hyperref}
+\RequirePackage{currfile}
+
+\newcommand{\solutionname}{Solution}
+
+% Theorems - Anyway
 
 \theoremstyle{definition}
 \newtheorem*{notation}{Notation}
@@ -50,10 +66,128 @@
 \newtheorem*{remark}{Remark}
 \newtheorem*{remarks}{Remarks}
 
-\usepackage{thmbox}
+\if@usebeamer 
+\def\diffd{\mathsf{d}} % physics override
+\else
+\if@useams
+\else
+\RequirePackage{thmbox}
+\hfuzz 4.59995pt % thmbox
+\fi\fi
 
-\renewenvironment{proof}[1][]{%
-    \list{\hspace\labelsep\textit{\proofname\ #1\unskip\,.}}{%
+% Theorems - Theorems
+
+\if@usebeamer
+
+\theoremstyle{plain}
+\newtheorem*{claim}{Claim}
+\newtheorem*{proposition}{Proposition}
+
+\else\if@useams
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{definition*}{Definition}[section]
+
+\newcommand{\newtheoremalias}[2]{
+    \newaliascnt{#1}{definition}
+    \newtheorem{#1}[#1]{#2}
+    \aliascntresetthe{#1}}
+
+\theoremstyle{plain}
+\newtheoremalias{theorem}{Theorem}
+\newtheoremalias{lemma}{Lemma}
+\newtheoremalias{claim}{Claim}
+\newtheoremalias{corollary}{Corollary}
+\newtheoremalias{proposition}{Proposition}
+
+\else
+
+\newtheorem[bodystyle=\normalfont\noindent,
+            L]{definition}{Definition}[section]
+
+\newtheorem[bodystyle=\normalfont\noindent,
+            L]{definition*}{Definition}[section]
+
+\newcommand{\newtheoremenv}[2]{
+    \newaliascnt{#1}{definition}
+    \newtheorem[M]{#1}[#1]{#2}
+    \aliascntresetthe{#1}}
+
+\newtheoremenv{theorem}{Theorem}
+\newtheoremenv{lemma}{Lemma}
+\newtheoremenv{claim}{Claim}
+\newtheoremenv{corollary}{Corollary}
+\newtheoremenv{proposition}{Proposition}
+
+\fi\fi
+
+% Theorems - Others
+
+\if@usebeamer
+
+\else\if@useams
+
+\theoremstyle{definition}
+
+\newtheoremalias{example}{Example}
+\newtheoremalias{examples}{Examples}
+
+\newtheorem*{example*}{Example}
+\newtheorem*{examples*}{Examples}
+
+\newtheorem{problem}{Problem}
+
+\else
+
+\newtheorem[bodystyle=\normalfont\noindent,
+            S]{problem}{Problem}
+
+\newcommand{\newexampleenv}[2]{
+    \newaliascnt{#1}{definition}
+    \newtheorem[bodystyle=\normalfont\noindent,
+    S]{#1}[#1]{#2}
+    \aliascntresetthe{#1}}
+
+\newexampleenv{example}{Example}
+\newexampleenv{examples}{Examples}
+
+\newtheorem[bodystyle=\normalfont\noindent,
+            headstyle=\bfseries\boldmath Example,
+            S]{example*}{Example}
+\newtheorem[bodystyle=\normalfont\noindent,
+            headstyle=\bfseries\boldmath Examples,
+            S]{examples*}{Examples}
+
+\fi\fi
+
+% Theorems - Proofs
+
+% Behaviour:
+% proof          produces Proof.     QED
+% proof[text]    produces text.      QED
+% solution       produces Solution. [NO QED]
+% solution[text] produces text.     [NO QED]
+
+% Beamer does not produce the "."
+
+\if@usebeamer
+
+\let\origproof\proof
+\let\origendproof\endproof
+
+\renewenvironment{proof}[1][\proofname]{\origproof[#1\nopunct]}{\origendproof}
+\renewenvironment{solution}[1][\solutionname]{\begin{proof}[#1]\renewcommand{\qedsymbol}{}}{\end{proof}}
+
+\else
+\if@useams
+
+\newenvironment{solution}[1][\solutionname]{\begin{proof}[#1]\renewcommand{\qedsymbol}{}}{\end{proof}}
+
+\else
+
+\renewenvironment{proof}[1][\proofname]{%
+    \list{\hspace\labelsep\textit{#1\@addpunct{.}}}{%
         \topsep=\smallskipamount%
         \partopsep=0pt%
         \leftmargin=\parindent%
@@ -72,10 +206,8 @@
     \hfill\box\thmbox@box%
     \endlist\par}
 
-\newcommand{\solutionname}{Solution}
-
-\newenvironment{solution}[1][]{%
-    \list{\hspace\labelsep\textit{\solutionname\ #1\unskip\,.}}{%
+\newenvironment{solution}[1][\solutionname]{%
+    \list{\hspace\labelsep\textit{#1\@addpunct{.}}}{%
         \topsep=\smallskipamount%
         \partopsep=0pt%
         \leftmargin=\parindent%
@@ -85,37 +217,13 @@
     \item\relax\ignorespaces}%
 {\endlist}
 
-\hfuzz 4.59995pt % thmbox
+\fi
+\fi
 
-\newtheorem[bodystyle=\normalfont\noindent,
-            L]{definition}{Definition}[section]
+% Theorems - Numbering Names
 
-\newtheorem[bodystyle=\normalfont\noindent,
-            L]{definition*}{Definition}[section]
-
-\newcommand{\newtheoremenv}[2]{
-    \newaliascnt{#1}{definition}
-    \newtheorem[M]{#1}[#1]{#2}
-    \aliascntresetthe{#1}}
-
-\newcommand{\newexampleenv}[2]{
-    \newaliascnt{#1}{definition}
-    \newtheorem[bodystyle=\normalfont\noindent,
-    S]{#1}[#1]{#2}
-    \aliascntresetthe{#1}}
-
-\newtheoremenv{theorem}{Theorem}
-\newtheoremenv{lemma}{Lemma}
-\newtheoremenv{claim}{Claim}
-\newtheoremenv{corollary}{Corollary}
-\newtheoremenv{proposition}{Proposition}
-
-\newexampleenv{example}{Example}
-\newexampleenv{examples}{Examples}
-
-\newtheorem[bodystyle=\normalfont\noindent,
-            S]{problem}{Problem}
-
+\if@usebeamer
+\else
 \providecommand*{\definitionautorefname}{Definition}
 \providecommand*{\theoremautorefname}{Theorem}
 \providecommand*{\lemmaautorefname}{Lemma}
@@ -126,13 +234,7 @@
 
 \providecommand*{\exampleautorefname}{Example}
 \providecommand*{\examplesautorefname}{Examples}
-
-\newtheorem[bodystyle=\normalfont\noindent,
-            headstyle=\bfseries\boldmath Example,
-            S]{example*}{Example}
-\newtheorem[bodystyle=\normalfont\noindent,
-            headstyle=\bfseries\boldmath Examples,
-            S]{examples*}{Examples}
+\fi
 
 % Functions for PGF
 \pgfkeys{/pgf/declare function={csc(\x) = cosec(\x);}}

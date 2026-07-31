@@ -1,0 +1,352 @@
+\documentclass{article}
+\usepackage[ams]{eason}
+
+\usepackage{pdfpages}
+
+\usepackage[a4paper, margin=1in]{geometry}
+
+\usepackage{lipsum}
+
+\input{version}
+
+\title{\LaTeX\ Style}
+\author{Eason Shao}
+\date{v.\DATE.\COMMITSHA}
+
+\begin{document}
+\maketitle
+
+\section{Symbols}
+\subsection{Misc}
+\[
+    \epsilon, n\inverse, \LHS, \RHS, \theta\degree, \rightbar{\pdv{f}{x}}_{y, z}
+\]
+\[
+    \implies, \impliedby, \iff, \notimplies, \notimpliedby, \notiff
+\]
+\[
+    \bigland, \biglor
+\]
+
+\subsection{Sets}
+\[
+    \PP, \FF, \QQ\multiplicative, \CC\compactify
+\]
+\[
+    \powerset\pqty{X}, X\compl, \size\NN, \emptyset
+\]
+\[
+    \subset, \nsubset, \subseteq, \nsubseteq, \subsetneq
+\]
+
+\subsection{Number Sets}
+\[
+    \NN, \ZZ, \QQ, \RR, \CC
+\]
+
+\subsection{Intervals}
+\[
+    \ccintv{1}{2}, \cointv{1}{2}, \ocintv{1}{2}, \oointv{1}{2}
+\]
+
+\subsection{Functions}
+\[
+    \img, \ker
+\]
+\[
+    \sign, \identity, \indicator, \characteristic, \diracdelta, \kronecker, \levicivita
+\]
+\[
+    \functiondomain{\identity_{\RR}}{\RR}{\RR}
+\]
+\[
+    \functionmap{\identity_{\RR}}{x}{x}
+\]
+\[
+    \function{\identity_{\RR}}{\RR}{\RR}{x}{x}
+\]
+
+\subsubsection{Permutations}
+\[
+    \perm{12} \perm{34}, \perm{{1}{2}\cdots{n}{n + 1}} \perm{{n + 1}n}
+\]
+\[
+    \permverb{1234}{1{2} 2{1} 3{4} 4{3}}, \permverb{12{\cdots}{n - 1}{n}{n + 1}}{1{2} 2{3} \cdots{\cdots} {n - 1}{n} {n}{n + 1} {n + 1}{1}} \permverb{{n}{n + 1}}{{n + 1}{n} {n}{n + 1}}
+\]
+
+\subsubsection{Trigonometric and Hyperbolic Functions}
+\[
+    \sin, \cos, \tan, \cot, \sec, \csc
+\]
+\[
+    \arcsin, \arccos, \arctan, \arccot, \arcsec, \arccsc
+\]
+\[
+    \sinh, \cosh, \tanh, \coth, \sech, \csch
+\]
+\[
+    \arsinh, \arcosh, \artanh, \arcoth, \arsech, \arcsch
+\]
+
+\subsubsection{UK Notation}
+\[
+    \cosec, \cosech, \arccosec, \arcosech
+\]
+
+\subsubsection{Exponential and Logarithmic Functions}
+\[
+    \exp, \log, \ln, \lg, \lb
+\]
+
+\subsection{Number Theory}
+\[
+    \totient, \gcd, \gcf, \hcf, \lcm, \max, \min
+\]
+\[
+    7 \modulo 2, \equiv, \nequiv, 2 \divides 6, 2 \notdivides 7
+\]
+
+\subsection{Algebra}
+
+\subsubsection{Group Theory}
+\[
+    \Aut, \Inn, \Out, \End
+\]
+\[
+    \ord, \Isom, \Sym, \Syl, \Fix, \Orb, \Stab, \ccl
+\]
+\[
+    \trivialgp, \actson, \subgroup, \supgroup, \normalsub, \normalsup, \isomorphic, \notisomorphic, \mobius
+\]
+
+\subsubsection{Ring Theory}
+\[
+    \subring, \supring, \idealsub, \idealsup
+\]  
+
+\subsubsection{Module Theory}
+\[
+    \submodule, \supmodule, \Ann, \Fit
+\]
+
+\subsubsection{Polynomials}
+\[
+    \content
+\]
+
+\subsection{Geometry}
+\[
+    \CP, \RP
+\]
+
+\subsection{Vector Calculus}
+\[
+    \grad, \div, \curl, \tens{T}
+\]
+
+\subsection{Optimisation}
+\[
+    \argmin, \argmax
+\]
+
+\subsection{Analysis}
+\[
+    \LUB, \supremum, \sup, \GLB, \infimum, \inf, \osc
+\]
+
+\subsubsection{Limits}
+\[
+    \limsup, \liminf, \lim, \to, \notto
+\]
+
+\subsubsection{Big/Little O Notation}
+\[
+    \littleO, \bigO, \bigTheta, \bigOmega, \littleOmega
+\]
+
+\subsubsection{Infinity}
+\[
+    \infty, \plusinfty, \minusinfty, \pminfty
+\]
+
+\subsubsection{Differentiability Classes}
+\[
+    \contClass{0}, \diffClass{1}, \smoothClass, \analyticClass
+\]
+
+\subsubsection{Integration}
+\[
+    \partition, \upperSum, \lowerSum, \upperI, \lowerI, \upperInt, \lowerInt
+\]
+
+\subsection{Probability}
+\[
+    \eventSpace, \indp, \pqty{\Conditional{A}{B}}, \Prob, \Expt, \Var, \Cov, \Corr
+\]
+
+\subsubsection{Convergence}
+\[
+    \toProb, \toAlmostSure, \toDist
+\]
+
+\subsubsection{Distribution}
+\[
+    \Bernoulli, \Binomial, \NegativeBinomial, \Multinomial, \Poisson, \Normal, \Exponential, \Geometric, \Uniform
+\]
+
+\[
+    \sNormCdf, \sNormPdf
+\]
+
+\subsection{Complex Numbers}
+\[
+    \arg, \conjugate{z}, \Re, \Im
+\]
+
+\subsection{Linear Algebra}
+\[
+    \diag, \det, \tr, \adj, \nul, \spn
+\]
+
+\subsubsection{Vector Spaces}
+\[
+    \subspace, \supspace
+\]
+
+\subsubsection{Matrices}
+\[
+    \identityM, \zeroM, \vb{M}\transpose, \vb{M}\hermitian, \vb{M}\perppl
+\]
+
+\subsubsection{Matrix Groups}
+\[
+    \matrixset, \GL, \SL, \Or, \SO, \U, \SU, \PGL, \PSL
+\]
+
+\subsubsection{Positive/Negative Definiteness}
+\[
+    \posDef, \posDefEq, \negDef, \negDefEq
+\]
+
+\subsubsection{Basis Vectors}
+\[
+    \unitv{e}, \unitv*{\theta}, \ihat, \jhat, \khat
+\]
+
+\subsection{Theoretical Physics}
+
+\subsubsection{Dimensional Analysis}
+\[
+    \dimT, \dimL, \dimM, \dimLess
+\]
+
+\subsection{Paired Delimiters}
+\[
+    \pqty{\frac{a}{b}}, \bqty{\frac{a}{b}}, \Bqty{\frac{a}{b}}, \abs{\frac{a}{b}}, \norm{\frac{a}{b}}, \norm[2]{\frac{a}{b}}
+\]
+\[
+    \bbrac{\frac{a}{b}}, \ceil{\frac{a}{b}}, \floor{\frac{a}{b}}, \angBrac{\frac{a}{b}}
+\]
+\[
+    \set{x \in \RR}{x = \frac{a}{b}}, \Conditional{\frac{x}{y}}{A}
+\]
+
+\section{Override}
+\[
+    \flatfrac{a}{b}, \flatfrac{a}{\frac{a}{b}}
+\]
+
+\[
+    -\dv*{x}{y}, -\pdv*{x}{y}
+\]
+
+\section{Theorems}
+\begin{definition}[Some Definition]
+    \label{def}%
+    This is a \emph{definition}. \lipsum[1]
+\end{definition}
+
+\begin{theorem}[Very Important Theorem]
+    \label{thm}%
+    This is a very important theorem. \lipsum[2]
+\end{theorem}
+
+\begin{proof}
+    A proof. \lipsum[3]
+\end{proof}
+
+\begin{proof}[\proofname\ of \autoref{thm}]
+    A proof of \autoref{thm}. \lipsum[4]
+\end{proof}
+
+\begin{examples}
+    Some examples of the theorem. \lipsum[5]
+\end{examples}
+
+\begin{notation}
+    The previous theorem allows us to abuse notation. \lipsum[6]
+\end{notation}
+
+\begin{corollary}[Obvious Corollary]
+    \label{cor}%
+    A corollary. \lipsum[7]
+\end{corollary}
+
+\begin{example}[An example]
+    An example. \lipsum[8]
+\end{example}
+
+\begin{lemma}[Some Lemma]
+    \label{lem}%
+    Some lemma. \lipsum[9]
+\end{lemma}
+
+\begin{claim}[Some Claim]
+    \label{cla}%
+    Some claim. \lipsum[10]
+\end{claim}
+
+\begin{remark}
+    This is a remark on the claim. \lipsum[11]
+\end{remark}
+
+\begin{proposition}[Some Proposition]
+    \label{pro}%
+    A proposition. \lipsum[12]
+\end{proposition}
+
+\begin{remarks}
+    Some remarks on this proposition. \lipsum[13]
+\end{remarks}
+
+\begin{problem}[Some Problem]
+    \label{prm}%
+    A problem. \lipsum[14]
+\end{problem}
+
+\begin{solution}
+    A solution. \lipsum[15]
+\end{solution}
+
+\begin{solution}[\solutionname\ of \autoref{prm}]
+    A solution of \autoref{prm}. \lipsum[16]
+\end{solution}
+
+Referencing works as well, like \autoref{def}, \autoref{thm}, \autoref{cor}, \autoref{lem}, \autoref{cla}, \autoref{pro}, and \autoref{prm}.
+
+We also have definitions separately numbered.
+
+\begin{definition*}[Some Definition]
+    \label{defs}%
+    This is a \emph{definition}. \lipsum[1]
+\end{definition*}
+
+\begin{example*}
+    Unnumbered stuff! \lipsum[17]
+\end{example*}
+
+\begin{examples*}
+    Unnumbered stuffs! \lipsum[18]
+\end{examples*}
+
+\end{document}
