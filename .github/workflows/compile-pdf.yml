@@ -8,8 +8,32 @@ on:
 
   workflow_dispatch:
 
-
 jobs:
-  call-build:
-    name: Call Reusable Workflow
-    uses: EasonSYC/latex-style-workflow/.github/workflows/compile-pdf.yml@main
+  build:
+    runs-on: ubuntu-latest
+    name: Build PDF
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup TeX Live
+        uses: EasonSYC/latex-style-setup@main
+
+      - name: Compile PDF - thmbox
+        uses: EasonSYC/latex-compile-pdf@main
+        with:
+          job-name: ${{ github.event.repository.name }}-thmbox
+          input-file: tests/thmbox/thmbox.tex
+
+      - name: Compile PDF - ams
+        uses: EasonSYC/latex-compile-pdf@main
+        with:
+          job-name: ${{ github.event.repository.name }}-ams
+          input-file: tests/ams/ams.tex
+
+      - name: Compile PDF - beamer
+        uses: EasonSYC/latex-compile-pdf@main
+        with:
+          job-name: ${{ github.event.repository.name }}-beamer
+          input-file: tests/beamer/beamer.tex
