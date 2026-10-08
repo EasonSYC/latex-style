@@ -49,7 +49,7 @@
 \RequirePackage{tikz-3dplot}
 
 \RequirePackage{siunitx}
-
+\RequirePackage{hepnames}
 \RequirePackage[section]{algorithm}
 \RequirePackage[noEnd=false,spaceRequire=false]{algpseudocodex}
 \RequirePackage[section]{minted}
@@ -60,6 +60,12 @@
 
 \RequirePackage{hyperref}
 \RequirePackage{currfile}
+
+\RequirePackage{xpatch}
+\xpatchcmd\@HepConStyle
+ {\edef\@upcode{\updefault}}
+ {\ifdefined\shapedefault\edef\@upcode{\shapedefault}\else\edef\@upcode{\updefault}\fi}
+ {}{}
 
 \newcommand{\solutionname}{Solution}
 
