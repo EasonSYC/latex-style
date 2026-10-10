@@ -49,7 +49,11 @@
 \RequirePackage{tikz-3dplot}
 
 \RequirePackage{siunitx}
+
+\let\savedbfseries\bfseries
 \RequirePackage{hepnames}
+\let\bfseries\savedbfseries
+
 \RequirePackage[section]{algorithm}
 \RequirePackage[noEnd=false,spaceRequire=false]{algpseudocodex}
 \RequirePackage[section]{minted}
