@@ -14,7 +14,9 @@
 \RequirePackage{graphicx}
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.8}
-\usetikzlibrary{calc, automata, positioning, arrows}
+\usetikzlibrary{calc, automata, decorations, positioning, arrows}
+\tikzset{zigzag edge/.style={decorate,decoration={zigzag,pre length=2pt,post length=5pt}}}
+
 % \RequirePackage[utf8]{inputenc}
 
 \RequirePackage{fancyhdr}
