@@ -7,7 +7,12 @@
 
 \newcommand{\degree}{^{\circ}}
 
-\newcommand{\rightbar}[1]{\left.#1\right\vert}
+\makeatletter
+
+\DeclarePairedDelimiter{\rightbar@}{.}{|}
+\newcommand{\rightbar}[1]{\rightbar@*{#1}}
+
+\makeatother
 
 \newcommand{\notimplies}{\centernot\implies}
 \newcommand{\notimpliedby}{\centernot\impliedby}
@@ -228,12 +233,13 @@
 \newcommand{\upperI}{I^{\ast}}
 \newcommand{\lowerI}{I_{\ast}}
 
+\makeatletter
+
 \newcommand{\upperInt}{\mathop{\mathpalette\tb@int{t}}\!\int}
 \newcommand{\lowerInt}{\mathop{\mathpalette\tb@int{b}}\!\int}
 
-\makeatletter
 \newcommand\tb@int[2]{%
-  \sbox\z@{$\m@th#1\int$}%
+  \sbox\z@{\(\m@th#1\int\)}%
   \if#2t%
     \rlap{\hbox to\wd\z@{%
       \hfil
@@ -254,7 +260,7 @@
 % Probability
 \newcommand{\eventSpace}{\mathcal{F}}
 \newcommand{\indp}{\perp\!\!\!\!\perp}
-\newcommand{\Conditional}[2]{\bound{#1 \,\middle|\, #2}}
+\newcommand{\Conditional}[2]{#1 \,\middle|\, #2}
 \newcommand{\Prob}{\mathbb{P}}
 \newcommand{\Expt}{\mathbb{E}}
 \DeclareMathOperator{\Var}{Var}
@@ -411,9 +417,18 @@
 
 \makeatother
 
-\newcommand{\set}[2]{\Bqty{\bound{#1 \,\middle|\, #2}}}
+\NewDocumentCommand{\set}{ m g }{%
+    \IfNoValueTF{#2}
+        {\Bqty{#1}}
+        {\Bqty{#1 \;\middle|\; #2}}%
+}
 
-\newcommand{\bound}[1]{\left.#1\right.}
+\makeatletter
+
+\DeclarePairedDelimiter{\bound@}{.}{.}
+\newcommand{\bound}[1]{\bound@*{#1}}
+
+\makeatother
 
 % Overrides
 
