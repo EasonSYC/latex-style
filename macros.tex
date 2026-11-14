@@ -397,6 +397,19 @@
 
 \NewDocumentCommand{\prodrule}{O{} O{}}{\mathrel{\overset{#1}{\underset{#2}{\longrightarrow}}}}
 
+\newcommand{\registerMachine}{\mathcal{R}}
+\newcommand{\sPlus}[3]{#1: \pqty{#2, +, #3}}
+\newcommand{\sMinus}[4]{#1: \pqty{#2, -, #3, #4}}
+\newcommand{\halt}{\downarrow}
+\newcommand{\nothalt}{\uparrow}
+\newcommand{\haltingSet}{\Omega}
+\DeclareMathOperator{\upper}{upper}
+
+
+\newcommand{\pfunctiondomain}[3]{
+    #1: #2 \dashrightarrow #3
+}
+
 % Paired Delimiters
 
 \makeatletter
