@@ -296,6 +296,49 @@
 \newcommand{\algorithmautorefname}{Algorithm}
 \newcommand{\listingautorefname}{Listing}
 
+% Christmas Surprise
+
+\RequirePackage{scsnowman}
+
+% Christmas Surprise - Items & QEDs
+
+\makeitemsnowman
+\makeqedsnowman
+
+\SetLabelAlign{snowman}{\hss\llap{\scsnowman}}
+\SetLabelAlign{snowmannum}{\hss\llap{\scsnowman}}
+\setlist[itemize]{align=snowman}
+\setlist[enumerate]{align=snowmannum}
+
+% Christmas Surprise - Page Numbering
+
+\makeatletter
+\newif\ifxmas@footer
+\let\xmas@pagenumbering\pagenumbering
+\renewcommand\pagenumbering[1]{%
+  \xmas@pagenumbering{#1}%
+  \global\let\xmas@thepage\thepage
+  \gdef\thepage{\ifxmas@footer\faTree\ \xmas@thepage\ \faTree\else\xmas@thepage\fi}}
+\patchcmd\@outputpage{\textwidth{\@thefoot}}%
+  {\textwidth{\xmas@footertrue\@thefoot\xmas@footerfalse}}%
+  {}{\PackageWarning{xmas}{Could not patch footer}}
+\makeatother
+
+\pagenumbering{enumsnowman}
+
+% Christmas Surprise - ToC Snowman
+
+\scsnowmandefault{mouthshape=smile}
+
+\newcommand{\snowmans}{\scsnowman[scale=3,hat=red,muffler=blue,arms,buttons]\,
+{\color{blue}\scsnowman[scale=3,body,hat=black,muffler=red,arms]}\,
+\scsnowman[scale=3,body,hat=red,muffler=blue,buttons=white]\,
+\scsnowman[scale=3,hat=blue,muffler=red,snow,note,nose=red]\,
+{\color{red}\scsnowman[scale=3,hat=black,muffler=blue,arms,broom=black]}\,
+\scsnowman[scale=3,body,hat=blue,muffler=red,arms,snow]}
+
+\pretocmd{\tableofcontents}{\begin{center}\Huge\snowmans\end{center}}{}{}
+
 % Macros
 \input{macros.tex}
 \endinput
