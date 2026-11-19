@@ -1,3 +1,5 @@
+\makeatletter
+
 % Misc
 \renewcommand{\epsilon}{\varepsilon}
 \newcommand{\inverse}{^{-1}}
@@ -10,12 +12,8 @@
 
 \newcommand{\degree}{^{\circ}}
 
-\makeatletter
-
 \DeclarePairedDelimiter{\rightbar@}{.}{|}
 \newcommand{\rightbar}[1]{\rightbar@*{#1}}
-
-\makeatother
 
 \newcommand{\notimplies}{\centernot\implies}
 \newcommand{\notimpliedby}{\centernot\impliedby}
@@ -238,8 +236,6 @@
 \newcommand{\upperI}{I^{\ast}}
 \newcommand{\lowerI}{I_{\ast}}
 
-\makeatletter
-
 \newcommand{\upperInt}{\mathop{\mathpalette\tb@int{t}}\!\int}
 \newcommand{\lowerInt}{\mathop{\mathpalette\tb@int{b}}\!\int}
 
@@ -258,7 +254,6 @@
     }}
   \fi
 }
-\makeatother
 
 % https://tex.stackexchange.com/a/211132
 
@@ -356,11 +351,9 @@
 \newcommand{\negDefEq}{\preceq}
 
 % Linear Algebra - Basis Vectors
-\makeatletter
 \newcommand{\unitv@nostar}[1]{\vb{\hat{#1}}}
 \newcommand{\unitv@star}[1]{\vb*{\hat{#1}}}
 \newcommand{\unitv}{\@ifstar{\unitv@star}{\unitv@nostar}}
-\makeatother
 
 % \newcommand{\ihat}{\unitv{\ii}}
 % \newcommand{\jhat}{\unitv{\jj}}
@@ -433,8 +426,6 @@
 
 % Paired Delimiters
 
-\makeatletter
-
 \DeclarePairedDelimiter{\bbrac@}{\llbracket}{\rrbracket}
 \newcommand{\bbrac}[1]{\bbrac@*{#1}}
 
@@ -447,24 +438,17 @@
 \DeclarePairedDelimiter{\angBrac@}{\langle}{\rangle}
 \newcommand{\angBrac}[1]{\angBrac@*{#1}}
 
-\makeatother
-
 \NewDocumentCommand{\set}{ m g }{%
     \IfNoValueTF{#2}
         {\Bqty{#1}}
         {\Bqty{#1 \;\middle|\; #2}}%
 }
 
-\makeatletter
 
 \DeclarePairedDelimiter{\bound@}{.}{.}
 \newcommand{\bound}[1]{\bound@*{#1}}
 
-\makeatother
-
 % Overrides
-
-\makeatletter
 
 \DeclarePairedDelimiter{\pqty@}{(}{)}
 \renewcommand{\pqty}[1]{\pqty@*{#1}}
@@ -481,8 +465,8 @@
 \DeclarePairedDelimiter{\norm@}{\lVert}{\rVert}
 \renewcommand{\norm}[2][]{\norm@*{#2}_{#1}}
 
-\makeatother
-
 \renewcommand{\flatfrac}[2]{\mathopen{}\mathclose\bgroup\left.\kern-\nulldelimiterspace#1\middle\slash#2\aftergroup\egroup\right.\kern-\nulldelimiterspace}
 
 % https://github.com/Willie169/physics-patch/issues/7
+
+\makeatother

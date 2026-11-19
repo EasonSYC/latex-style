@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{eason}[Eason]
 
+\makeatletter
+
 \newif\if@useams
 \newif\if@usebeamer
 \@useamstrue
@@ -305,16 +307,36 @@
 \makeitemsnowman
 \makeqedsnowman
 
-\SetLabelAlign{snowman}{\hss\llap{\scsnowman}}
-\SetLabelAlign{snowmannum}{\hss\llap{\scsnowman}}
-\setlist[itemize]{align=snowman}
-\setlist[enumerate]{align=snowmannum}
+\usepackage{scsnowman}
+
+\newcommand\xmas@itemsm[2]{\scsnowman[scale=#1,hat=black,muffler=#2]}
+
+\if@usebeamer
+    \setbeamertemplate{itemize item}{\xmas@itemsm{1.2}{red}}
+    \setbeamertemplate{itemize subitem}{\xmas@itemsm{1}{blue}}
+    \setbeamertemplate{itemize subsubitem}{\xmas@itemsm{0.8}{yellow}}
+    \setbeamertemplate{enumerate item}{\xmas@itemsm{1.2}{red}}
+    \setbeamertemplate{enumerate subitem}{\xmas@itemsm{1}{blue}}
+    \setbeamertemplate{enumerate subsubitem}{\xmas@itemsm{0.8}{yellow}}
+\else
+    \SetLabelAlign{sm1}{\hss\llap{\xmas@itemsm{1}{black}}}
+    \SetLabelAlign{sm2}{\hss\llap{\xmas@itemsm{1}{red}}}
+    \SetLabelAlign{sm3}{\hss\llap{\xmas@itemsm{1}{blue}}}
+    \SetLabelAlign{sm4}{\hss\llap{\xmas@itemsm{1}{yellow}}}
+    \setlist[itemize,1]{align=sm1}
+    \setlist[itemize,2]{align=sm2}
+    \setlist[itemize,3]{align=sm3}
+    \setlist[itemize,4]{align=sm4}
+    \setlist[enumerate,1]{align=sm1}
+    \setlist[enumerate,2]{align=sm2}
+    \setlist[enumerate,3]{align=sm3}
+    \setlist[enumerate,4]{align=sm4}
+\fi
 
 % Christmas Surprise - Page Numbering
 
 % \RequirePackage{fontawesome6}
 
-\makeatletter
 \newif\ifxmas@footer
 \let\xmas@pagenumbering\pagenumbering
 \renewcommand\pagenumbering[1]{%
@@ -324,7 +346,6 @@
 \patchcmd\@outputpage{\textwidth{\@thefoot}}%
   {\textwidth{\xmas@footertrue\@thefoot\xmas@footerfalse}}%
   {}{\PackageWarning{xmas}{Could not patch footer}}
-\makeatother
 
 \pagenumbering{enumsnowman}
 
@@ -332,15 +353,22 @@
 
 \scsnowmandefault{mouthshape=smile}
 
-\newcommand{\snowmans}{\scsnowman[scale=3,hat=red,muffler=blue,arms,buttons]\,
-{\color{blue}\scsnowman[scale=3,body,hat=black,muffler=red,arms]}\,
-\scsnowman[scale=3,body,hat=red,muffler=blue,buttons=white]\,
-\scsnowman[scale=3,hat=blue,muffler=red,snow,note,nose=red]\,
-{\color{red}\scsnowman[scale=3,hat=black,muffler=blue,arms,broom=black]}\,
-\scsnowman[scale=3,body,hat=blue,muffler=red,arms,snow]}
+\newcommand{\snowmans}[1]{\scsnowman[scale=#1,hat=red,muffler=blue,arms,buttons]\,
+{\color{blue}\scsnowman[scale=#1,body,hat=black,muffler=red,arms]}\,
+\scsnowman[scale=#1,body,hat=red,muffler=blue,buttons=white]\,
+\scsnowman[scale=#1,hat=blue,muffler=red,snow,note,nose=red]\,
+{\color{red}\scsnowman[scale=#1,hat=black,muffler=blue,arms,broom=black]}\,
+\scsnowman[scale=#1,body,hat=blue,muffler=red,arms,snow]}
 
-\pretocmd{\tableofcontents}{\begin{center}\Huge\snowmans\end{center}}{}{}
+\if@usebeamer
+\pretocmd{\tableofcontents}{\begin{center}\Huge\snowmans{2}\end{center}}{}{}
+\else
+\pretocmd{\tableofcontents}{\begin{center}\Huge\snowmans{3}\end{center}}{}{}
+\fi
+
+\makeatother
 
 % Macros
 \input{macros.tex}
+
 \endinput
